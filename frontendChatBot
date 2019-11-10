@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+   <body>
+      <div id="webchat" role="main"></div>
+      <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+      <script>
+          const styleSet = window.WebChat.createStyleSet({
+            bubbleBackground: 'rgba(0, 0, 255, .1)',
+            bubbleFromUserBackground: 'rgba(0, 255, 0, .1)',
+            fontFamily: "'Comic Sans MS', 'Arial', sans-serif",
+            fontWeight: 'bold',
+            botAvatarInitials: 'Echipa',
+            userAvatarInitials: 'Tinder',
+            rootHeight: '100%',
+            rootWidth: '50%'
+         });
+
+       /*  const styleOptions = {
+            margin: 0,
+            bubbleBackground: 'rgba(0, 0,255, .1)',
+            bubbleFromUserBackground: 'rgba(0, 255, 0, .1)',
+            rootHeight: '100%',
+            rootWidth: '50%',
+            botAvatarInitials: 'BF',
+            userAvatarInitials: 'WC'*/
+           // fontFamily: "'Comic Sans MS', 'Arial', sans-serif",
+           // fontWeight: 'bold'
+         //};
+
+         styleSet.textContent = {
+            ...styleSet.textContent,
+            fontFamily: "'Comic Sans MS', 'Arial', sans-serif",
+            fontWeight: 'bold'
+         };
+
+
+         window.WebChat.renderWebChat(
+            {
+               directLine: window.WebChat.createDirectLine({
+                  secret: 'E6L5fsPPxmg.hF0ftDtDHhKomUPZq4SmR2jQct-ylu9X3Ww0q-oCouY'
+               }),
+
+               // Passing 'styleOptions' when rendering Web Chat
+              // styleOptions,
+               styleSet
+            },
+            document.getElementById('webchat')
+         );
+      </script>
+   </body>
+</html>
+
